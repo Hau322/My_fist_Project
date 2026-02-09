@@ -13,6 +13,50 @@
         background: #1a1a1a;
         color: white;
     }
+/* Thanh menu chính */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Đẩy logo sang trái, menu sang phải */
+    align-items: center;
+   background-color: rgba(51, 51, 51, 0.9);
+    padding: 10px 5%;
+    position: fixed; /* Giữ menu luôn ở trên cùng khi cuộn trang */
+    top: 0;
+    left:0;
+    right:0;
+    z-index: 2000;
+    border-radius: 5px;
+}
+
+.logo img{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+/* Danh sách menu */
+.nav-links {
+    list-style: none; /* Bỏ dấu chấm tròn của thẻ li */
+    display: flex;    /* Quan trọng: Dàn hàng ngang */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none; /* Bỏ gạch chân */
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* Hiệu ứng khi di chuột vào */
+.nav-links a:hover {
+    color: #ff9900;
+}
 
     /* ---------------- HEADER ---------------- */
     header {
@@ -24,6 +68,7 @@
         justify-content: center;
         align-items: center;
         text-shadow: 0 3px 12px black;
+         margin-top: 0;
     }
 
     header p{
@@ -204,18 +249,28 @@
 </style>
 </head>
 <body>
-
+<nav class="navbar">
+    <div class="logo"><img src="./picture/1.jpg.webp"></div>
+    <div>
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+     </ul> 
+    </div>
+    <div>
+        <li><a href="./pages/login_out.html"><button class="btn btn-outline-light"> Sign in</button></a></li>
+    </div>
+</nav>
 <!-- HEADER -->
 <header>
-    
-    <a href="./pages/login_out.html"><button class="btn btn-outline-light">Sign in</button></a>
-    <p class="title">PO Studio</p>
+   <p class="title">PO Studio</p>
 </header>
 
 <!-- INFINITE CAROUSEL -->
 <section>
     <h2 >Shots</h2>
-
     <div class="carousel-container">
         <div class="carousel-track" id="carousel-track">
             <!-- JS will duplicate these automatically -->
@@ -254,7 +309,7 @@
 
 <!-- PHOTOGRAPHER -->
 <section>
-    <h2>Your Photographer</h2>
+    <h2>Photographer</h2>
     <div class="photographer-box">
           <div class="photo-list">
             <div class="card">
